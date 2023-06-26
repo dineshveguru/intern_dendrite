@@ -1,33 +1,12 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
-import { ReactKeycloakProvider } from "@react-keycloak/web";
-import keycloak from "./keycloak";
-import Home from "./pages/Homepage";
-import Secured from "./pages/Securedpage";
-import Nav from "./components/Nav";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import PrivateRoute from "./helpers/PrivateRoute";
+import Public from "./components/Public";
+import Protected from "./components/Protected";
+import useAuth from "./hooks/useAuth";
 
 function App() {
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Home />,
-    },
-    {
-      path: "/secured",
-      element: <Secured />,
-    },
-  ]);
-  return (
-    <div className="App">
-      <ReactKeycloakProvider authClient={keycloak}>
-        <Nav />
-        <RouterProvider router={router} />
-        <h1>Dinesh</h1>
-      </ReactKeycloakProvider>
-    </div>
-  );
+  const [isLogin, token] = useAuth();
+  return isLogin ? <Protected /> : <Public />;
 }
 
 export default App;
