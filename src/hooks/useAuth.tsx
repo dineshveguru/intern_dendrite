@@ -1,10 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import Keycloak, { KeycloakInstance } from "keycloak-js";
-// const client = new Keycloak({
-//   url: "http://127.0.0.1:8080",
-//   realm: "myrealm",
-//   clientId: "myclient",
-// });
 
 interface KeycloakConfig {
   url: string;

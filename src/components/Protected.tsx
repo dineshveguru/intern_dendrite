@@ -1,9 +1,14 @@
 import React from "react";
+import SideBar from "./Home/SideBar";
+import Home from "./Home/Hero";
 
 const Protected = () => {
   return (
-    <div>
-      <h1>Protected</h1>
+    <div className="container-fluid p-0">
+      <div className="row m-0 d-flex" style={{ height: "100vh" }}>
+        <SideBar />
+        <Home />
+      </div>
     </div>
   );
 };
