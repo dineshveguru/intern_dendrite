@@ -1,14 +1,22 @@
 import React from "react";
+import { ViewOption } from "../../../store/types";
+import "../home_styles.css";
 
 interface OptionProps {
   url: string;
   name: string;
+  handleViewChange: (view: ViewOption) => void;
 }
 
-const Option: React.FC<OptionProps> = ({ url, name }) => {
-  console.log(url);
+const Option: React.FC<OptionProps> = ({ url, name, handleViewChange }) => {
+  const selectedOption: ViewOption = name as ViewOption;
   return (
-    <span className="d-flex" style={{ width: "50px" }}>
+    <span
+      className="d-flex"
+      id="side-bar__option"
+      style={{ minWidth: "110px" }}
+      onClick={() => handleViewChange(selectedOption)}
+    >
       <img
         src={require(`../../assets/${url}`)}
         alt={name}

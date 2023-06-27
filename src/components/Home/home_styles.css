@@ -1,3 +1,12 @@
 .sidebar--container {
   background-color: rgb(143, 73, 255);
 }
+
+#side-bar__option {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+#side-bar__option:hover {
+  transform: translateX(10px);
+}

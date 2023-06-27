@@ -3,17 +3,19 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { ReactKeycloakProvider } from "@react-keycloak/web";
-import keycloak from "./keycloak";
+import { Provider } from "react-redux";
+import { createStore } from "redux";
+import reducer from "./store/reducers";
 
+const store = createStore(reducer);
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 
 root.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>
+  </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function

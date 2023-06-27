@@ -1,8 +1,8 @@
 const Search = () => {
   return (
-    <div>
+    <section className="hero--container col-sm-10 p-0 flex-fill">
       <h2>Search</h2>
-    </div>
+    </section>
   );
 };
 
