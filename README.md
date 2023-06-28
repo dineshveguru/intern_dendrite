@@ -13,6 +13,8 @@ Develop a simple web app to search music and create playlist, similar to Spotify
 
 ## Screenshots
 
+### Sign In/Sign up Page
+
 ![SignIn](https://github.com/dineshveguru/intern_dendrite/assets/82778240/dbb95ce3-2ef6-4e62-a994-29fc2359b743)
 
 ### Home Page
