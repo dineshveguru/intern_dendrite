@@ -34,7 +34,7 @@ const useAuth = (): [boolean, string | null] => {
         }
       })
       .catch((err) => alert(err));
-  }, []);
+  }, [token]);
   return [isLogin, token];
 };
 
